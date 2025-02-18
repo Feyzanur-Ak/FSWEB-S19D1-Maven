@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class GlobalHandler {
 
-    @ExceptionHandler(ErrorExceptions.class)
-    public ResponseEntity<ErrorResponse> handlerExceptions(ErrorExceptions errorExceptions) {
+    @ExceptionHandler(PlantException.class)
+    public ResponseEntity<ErrorResponse> handlerExceptions(PlantException errorExceptions) {
         ErrorResponse errorResponse = new ErrorResponse(
                 errorExceptions.getHttpStatus().value(),
                 errorExceptions.getMessage(),
